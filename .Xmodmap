@@ -1,1 +1,13 @@
-/home/takahashi/.Xmodmap
+remove Lock = Caps_Lock
+! CapsLockキーをEscキーに割り当てる
+keysym Caps_Lock = Control_L
+! 無変換をEsc、変換をEscに
+keycode 102 = Escape
+keycode 100 = Escape
+
+! カタカナひらがなをAltに
+keycode 101 = Alt_R
+
+add Control = Control_L
+add mod1 = Alt_R
+
