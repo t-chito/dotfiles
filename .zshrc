@@ -3,10 +3,17 @@
 #rsync -aur ~/suzaku/ takahashi@v192.168.1.76:/home/takahashi/suzaku/
 
 #####ssh rename
+<<<<<<< HEAD
 alias via="ssh -X takahashi@192.168.1.76"
 alias schian="ssh -X takahashi@192.168.1.74"
 alias gplant="ssh -X takahashi@192.168.1.59"
 alias flabat="ssh -X takahashi@192.168.1.45"
+=======
+#alias via="ssh -X takahashi@192.168.1.76"
+#alias schian="ssh -X takahashi@192.168.1.74"
+#alias gplant="ssh -X takahashi@192.168.1.59"
+
+>>>>>>> origin/master
 
 ###alias command
 alias goo="google-chrome &"
