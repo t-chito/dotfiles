@@ -1,6 +1,7 @@
 " 諸々の設定
 
-
+"色付け
+colorscheme koehler
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -24,7 +25,7 @@ set number
 " 現在の行を強調表示
 "set cursorline
 " 現在の行を強調表示（縦）
-set cursorcolumn
+"set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 set virtualedit=onemore
 " インデントはスマートインデント
@@ -67,3 +68,26 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+
+" neobundle 設定ではなくdein設定
+
+"if &compatible
+"  set nocompatible
+"endif
+set runtimepath+=~/git_repos/dotfiles/dein.vim
+
+call dein#begin(expand('~/git_repos/dotfiles/'))
+
+call dein#add('dotfiles/dein.vim')
+call dein#add('dotfiles/vimproc.vim', {'build': 'make'})
+
+call dein#add('dotfiles/neocomplete.vim')
+call dein#add('dotfiles/neomru.vim')
+call dein#add('dotfiles/neosnippet')
+
+" (中略)
+
+call dein#end()
+
+syntax on
