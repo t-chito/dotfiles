@@ -88,6 +88,9 @@ call dein#add('dotfiles/neosnippet')
 
 " (中略)
 
+call dein#add('lervag/vimtex')
+call dein#add('thinca/vim-quickrun')
 call dein#end()
+
 
 syntax on

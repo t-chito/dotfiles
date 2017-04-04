@@ -1,2 +1,2 @@
 100
-['dotfiles/dein.vim', 'dotfiles/neocomplete.vim', 'dotfiles/neomru.vim', 'dotfiles/neosnippet', 'dotfiles/vimproc.vim']
+['dotfiles/dein.vim', 'dotfiles/neocomplete.vim', 'dotfiles/neomru.vim', 'dotfiles/neosnippet', 'dotfiles/vimproc.vim', 'lervag/vimtex', 'thinca/vim-quickrun']
