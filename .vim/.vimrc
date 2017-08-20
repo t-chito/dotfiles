@@ -75,22 +75,22 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "if &compatible
 "  set nocompatible
 "endif
-set runtimepath+=~/git_repos/dotfiles/dein.vim
+"set runtimepath+=~/git_repos/dotfiles/dein.vim
 
-call dein#begin(expand('~/git_repos/dotfiles/'))
+"call dein#begin(expand('~/git_repos/dotfiles/'))
 
-call dein#add('dotfiles/dein.vim')
-call dein#add('dotfiles/vimproc.vim', {'build': 'make'})
+"call dein#add('dotfiles/dein.vim')
+"call dein#add('dotfiles/vimproc.vim', {'build': 'make'})
 
-call dein#add('dotfiles/neocomplete.vim')
-call dein#add('dotfiles/neomru.vim')
-call dein#add('dotfiles/neosnippet')
+"call dein#add('dotfiles/neocomplete.vim')
+"call dein#add('dotfiles/neomru.vim')
+"call dein#add('dotfiles/neosnippet')
 
 " (中略)
 
-call dein#add('lervag/vimtex')
-call dein#add('thinca/vim-quickrun')
-call dein#end()
+"call dein#add('lervag/vimtex')
+"call dein#add('thinca/vim-quickrun')
+"call dein#end()
 
 
 syntax on
