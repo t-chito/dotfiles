@@ -72,8 +72,15 @@ export HEADAS=/usr/local/software/heasoft/heasoft-6.20/x86_64-unknown-linux-gnu-
 export CALDB=/usr/local/software/caldb/
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
-
 alias heainit=". $HEADAS/headas-init.sh"
+
+#export SSW=~/software/ssw
+#export SSW_INSTR="gen hessi xray spex"
+#source $SSW/gen/setup/setup.ssw
+
+alias SSWidl='SSWidl nox'
+export SSW_INSTR="gen hessi xray spex"
+#export IDL_DIR=/usr/local/itt/idl
 
 #####setting
 

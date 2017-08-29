@@ -1,0 +1,2 @@
+100
+['.vim/dein.vim', '.vim/neocomplete.vim', '.vim/neomru.vim', '.vim/neosnippet', '.vim/vimproc.vim', 'lervag/vimtex', 'thinca/vim-quickrun']
