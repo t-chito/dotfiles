@@ -77,7 +77,7 @@ alias heainit=". $HEADAS/headas-init.sh"
 #export SSW=~/software/ssw
 #export SSW_INSTR="gen hessi xray spex"
 #source $SSW/gen/setup/setup.ssw
-
+export PATH="/home/takahashi/software/ssw/bin:$PATH"
 alias SSWidl='SSWidl nox'
 export SSW_INSTR="gen hessi xray spex"
 #export IDL_DIR=/usr/local/itt/idl
