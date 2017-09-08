@@ -4,7 +4,6 @@
 
 zstyle ':completion:*' list-colors 'di=36' 'ln=35'
 zstyle ':completion:*:default' menu select=1
-export LSCOLORS=gxfxxxxxcxxxxxxxxxxxxx
 
 #####ssh rename
 alias via="ssh takahashi@192.168.1.76"
@@ -74,14 +73,17 @@ export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 alias heainit=". $HEADAS/headas-init.sh"
 
-#export SSW=~/software/ssw
-#export SSW_INSTR="gen hessi xray spex"
+export SSW=~/software/ssw
+export SSW_INSTR="gen hessi xray spex"
 #source $SSW/gen/setup/setup.ssw
+#zshでの起動用PATH
 export PATH="/home/takahashi/software/ssw/bin:$PATH"
 alias SSWidl='SSWidl nox'
 export SSW_INSTR="gen hessi xray spex"
 #export IDL_DIR=/usr/local/itt/idl
-
+export IDL_DIR=/usr/share/gnudatalanguage
+export IDL_PATH=/usr/share/gnudatalanguage/lib
+$SSW/gen/setup/ssw_gdl
 #####setting
 
 
@@ -90,36 +92,19 @@ export SSW_INSTR="gen hessi xray spex"
 #history
 HISTFILE=~/.zsh_history
 SAVEHIST=10000
-#HISTTIMEFORMAT="[%Y/%M/%D %H:%M:%S] " もともとあるようだ
 HISTSIZE=10000
-#HISTIGNORE="ls*:history:" これはbash用であってzshにはない
 setopt hist_ignore_dups
 setopt append_history
-
-#dead zshaddhistory() {
-#    local line=${1%%$'\n'}
-#    local cmd=${line%% *}
-
-    # 以下の条件をすべて満たすものだけをヒストリに追加する
-#    [[ ${#line} -ge 5
-#        && ${cmd} != (ls|la|lx)
-#        && ${cmd} != (his)
-#        #&& ${cmd} != (rm)
-#    ]]
-#}
 setopt share_history
 
 #ls color
-#export LSCOLORS=gxfxcxdxbxegedabagacag
-#export LS_COLORS='di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;46'
-#export LS_COLORS='di=00;32:ln=00;35:so=32;40:pi=33:ex=31:bd=34:cd=34:su=30:sg=30:tw=30:ow=30'
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jpg=01;35:*.png=01;35:*.gif=01;35:*.bmp=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.png=01;35:*.mpg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35'
 
 # 補完候補もLS_COLORSに合わせて色が付くようにする
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # added by Anaconda3 4.3.0 installer
-##Vexport PATH="/home/takahashi/anaconda3/bin:$PATH"
+#export PATH="/home/takahashi/software/anaconda3/bin:$PATH"
 
 # added by Anaconda2 4.3.0 installer
-export PATH="/home/takahashi/anaconda2/bin:$PATH"
+export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
