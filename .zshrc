@@ -4,7 +4,7 @@
 
 zstyle ':completion:*' list-colors 'di=36' 'ln=35'
 zstyle ':completion:*:default' menu select=1
-
+onedrive=/mnt/c/Users/k-takahashi/OneDrive
 #####ssh rename
 alias via="ssh takahashi@192.168.1.76"
 alias schian="ssh takahashi@192.168.1.74"
@@ -26,6 +26,10 @@ alias vimgv="vim ~/.gvimrc"
 
 
 #####setting
+if [ `hostname` = "kyte-PC" ]; then
+	export DISPLAY=kyte-PC:0.0
+fi
+
 autoload -Uz compinit; compinit
 
 setopt auto_pushd
