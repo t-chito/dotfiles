@@ -23,7 +23,7 @@ alias vimz="vim ~/.zshrc"
 alias vimb="vim ~/.bashrc"
 alias vimv="vim ~/.vimrc"
 alias vimgv="vim ~/.gvimrc"
-
+alias vimc="vim ~/.cshrc"
 
 #####setting
 if [ `hostname` = "kyte-PC" ]; then
@@ -37,6 +37,9 @@ setopt correct
 setopt no_beep
 setopt list_packed
 setopt SH_WORD_SPLIT
+#対話シェル中でのコメントの有効化
+setopt interactive_comments
+
 
 export LANG=ja_JP.UTF-8
 export LESS=-q
@@ -69,7 +72,7 @@ PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
-
+export SETUP=~/software/ssw/gen/setup/
 
 export HEADAS=/usr/local/software/heasoft/heasoft-6.20/x86_64-unknown-linux-gnu-libc2.23
 export CALDB=/usr/local/software/caldb/
@@ -77,18 +80,41 @@ export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 alias heainit=". $HEADAS/headas-init.sh"
 
+###SSW
 export SSW=~/software/ssw
-export SSW_INSTR="gen hessi xray spex"
-#source $SSW/gen/setup/setup.ssw
-#zshでの起動用PATH
-export PATH="/home/takahashi/software/ssw/bin:$PATH"
-alias SSWidl='SSWidl nox'
-export SSW_INSTR="gen hessi xray spex"
-#export IDL_DIR=/usr/local/itt/idl
+export SSW_INSTR="gen hessi xray spex norh"
+#tcsh $SSW/gen/setup/setup.ssw /loud
+#export IDL_STARTUP='~/software/ssw/lib/idl_startup.pro'
+#export PATH="/home/takahashi/git_repos/mybin:$PATH"
+#export IDL_DIR=/usr/share/gnudatalanguage
+#export IDL_PATH=~/software/ssw/lib:/usr/share/gnudatalanguage/lib
+#export IDL_PATH=~/software/ssw/lib
+
+export GDL_STARTUP='~/software/ssw/lib/idl_startup.pro'
+export PATH="/home/takahashi/git_repos/mybin:$PATH"
+export GDL_DIR=/usr/share/gnudatalanguage
+#export GDL_PATH=~/software/ssw/lib:/usr/share/gnudatalanguage/lib
+
+export GDL_PATH="/usr/share/doc/gnudatalanguage/examples/pro:/usr/share/gnudatalanguage/lib:~/software/ssw/prolink"
+alias ssw_idl='ssw_idl nox'
+
 export IDL_DIR=/usr/share/gnudatalanguage
-export IDL_PATH=/usr/share/gnudatalanguage/lib
-$SSW/gen/setup/ssw_gdl
+export IDL_PATH="~/software/ssw/prolink:/usr/share/gnudatalanguage/lib"
+
+export NORH=${SSW}/radio/norh
+
+#tcsh  ${SSW}/gen/setup/setup.ssw
+#tcsh ${NORH}/setup/setup.norh
+#tcsh ~/setup.hessi_env
+
+#~/software/ssw/gen/setup/ssw_idl
+alias ssw_gdl='~/git_repos/mybin/ssw_gdl'
 #####setting
+onedrive=/mnt/c/Users/k-takahashi/OneDrive
+alias xwin='export DISPLAY=kyte-PC:0.0'
+
+#if [`hostname` = "kyte-PC" ]; then
+#  export DISPLAY=kyte-PC:0.0
 
 
 #bindkey -v
@@ -107,8 +133,8 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd
 # 補完候補もLS_COLORSに合わせて色が付くようにする
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-# added by Anaconda3 4.3.0 installer
-#export PATH="/home/takahashi/software/anaconda3/bin:$PATH"
+# added by Anaconda3 5.0.0 installer
+export PATH="/home/takahashi/software/anaconda3/bin:$PATH"
 
 # added by Anaconda2 4.3.0 installer
-export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
+#export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
