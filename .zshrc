@@ -6,12 +6,11 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35'
 zstyle ':completion:*:default' menu select=1
 
 #####ssh rename
-alias via="ssh takahashi@192.168.1.76"
-alias schian="ssh takahashi@192.168.1.74"
-alias gplant="ssh takahashi@192.168.1.59"
-alias flabat="ssh takahashi@192.168.1.45"
+alias flabat="ssh takahashi@192.168.1.24"
 
 ###alias command
+alias py27="source activate py27"
+alias kill-py27="source deactivate"
 alias goo="google-chrome &"
 alias la="ls -aXF --color=auto"
 alias ls="ls -XF --color=auto"
@@ -70,7 +69,7 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 
 export SETUP=~/software/ssw/gen/setup/
 
-export HEADAS=/usr/local/software/heasoft/heasoft-6.20/x86_64-unknown-linux-gnu-libc2.23
+export HEADAS=/usr/local/software/heasoft/heasoft-6.21/x86_64-unknown-linux-gnu-libc2.24
 export CALDB=/usr/local/software/caldb/
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
