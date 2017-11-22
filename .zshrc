@@ -6,13 +6,10 @@ zstyle ':completion:*' list-colors 'di=36' 'ln=35'
 zstyle ':completion:*:default' menu select=1
 onedrive=/mnt/c/Users/k-takahashi/OneDrive
 #####ssh rename
-<<<<<<< HEAD
 alias via="ssh takahashi@192.168.1.60"
 alias schian="ssh takahashi@192.168.1.56"
 alias gplant="ssh takahashi@192.168.1.59"
 alias midgard="ssh takahashi@192.168.1.57"
-=======
->>>>>>> 59ee7e61f6a65ae1356517191873d40921d25184
 alias flabat="ssh takahashi@192.168.1.24"
 
 ###alias command
