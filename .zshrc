@@ -10,7 +10,7 @@ alias via="ssh takahashi@192.168.1.60"
 alias schian="ssh takahashi@192.168.1.56"
 alias gplant="ssh takahashi@192.168.1.59"
 alias midgard="ssh takahashi@192.168.1.57"
-alias flabat="ssh takahashi@192.168.1.45"
+alias flabat="ssh takahashi@192.168.1.24"
 
 ###alias command
 alias goo="google-chrome &"
