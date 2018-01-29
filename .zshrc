@@ -1,7 +1,17 @@
 ##login command
 #xmodmap $HOME/.Xmodmap
 #rsync -aur ~/suzaku/ takahashi@v192.168.1.76:/home/takahashi/suzaku/
-
+#
+#
+#
+#sudo mount -t cifs //192.168.1.153/crystal2 -o username=admin,password=duel0112,rw,nounix,iocharset=utf8,file_mode=0644,dir_mode=0755 /home/takahashi/mountdir
+#mount
+#sudo umount /home/takahashi/mountdir
+#mount
+#useradd -u 522 -g users wiki
+#useradd -c "keisuke numata" -u 588 -g users numata
+#
+#
 zstyle ':completion:*' list-colors 'di=36' 'ln=35'
 zstyle ':completion:*:default' menu select=1
 
@@ -66,50 +76,20 @@ PROMPT=$tmp_prompt    # 通常のプロンプト
 PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
 RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
+export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
 
 export SETUP=~/software/ssw/gen/setup/
 
-export HEADAS=/usr/local/software/heasoft/heasoft-6.21/x86_64-unknown-linux-gnu-libc2.24
+export HEADAS=/usr/local/software/heasoft/heasoft-6.22.1-patch/x86_64-unknown-linux-gnu-libc2.25
 export CALDB=/usr/local/software/caldb/
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
-alias heainit=". $HEADAS/headas-init.sh"
 
-###SSW
-export SSW=~/software/ssw
-export SSW_INSTR="gen hessi xray spex norh"
-#tcsh $SSW/gen/setup/setup.ssw /loud
-#export IDL_STARTUP='~/software/ssw/lib/idl_startup.pro'
-#export PATH="/home/takahashi/git_repos/mybin:$PATH"
-#export IDL_DIR=/usr/share/gnudatalanguage
-#export IDL_PATH=~/software/ssw/lib:/usr/share/gnudatalanguage/lib
-#export IDL_PATH=~/software/ssw/lib
-
-export GDL_STARTUP='~/software/ssw/lib/idl_startup.pro'
 export PATH="/home/takahashi/git_repos/mybin:$PATH"
-export GDL_DIR=/usr/share/gnudatalanguage
-#export GDL_PATH=~/software/ssw/lib:/usr/share/gnudatalanguage/lib
 
-export GDL_PATH="/usr/share/doc/gnudatalanguage/examples/pro:/usr/share/gnudatalanguage/lib:~/software/ssw/prolink"
-alias ssw_idl='ssw_idl nox'
-
-export IDL_DIR=/usr/share/gnudatalanguage
-export IDL_PATH="~/software/ssw/prolink:/usr/share/gnudatalanguage/lib"
-
-export NORH=${SSW}/radio/norh
-
-#tcsh  ${SSW}/gen/setup/setup.ssw
-#tcsh ${NORH}/setup/setup.norh
-#tcsh ~/setup.hessi_env
-
-#~/software/ssw/gen/setup/ssw_idl
-alias ssw_gdl='~/git_repos/mybin/ssw_gdl'
 #####setting
 onedrive=/mnt/c/Users/k-takahashi/OneDrive
 alias xwin='export DISPLAY=kyte-PC:0.0'
-
-#if [`hostname` = "kyte-PC" ]; then
-#  export DISPLAY=kyte-PC:0.0
 
 
 #bindkey -v
