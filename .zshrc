@@ -86,14 +86,14 @@ RPROMPT=$tmp_rprompt  # 右側のプロンプト
 SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
 
-export SETUP=~/software/ssw/gen/setup/
-
 export HEADAS=/usr/local/software/heasoft/heasoft-6.22.1-patch/x86_64-unknown-linux-gnu-libc2.25
 export CALDB=/usr/local/software/caldb/
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 
-export PATH="/home/takahashi/git_repos/mybin:$PATH"
+export MY_SCR=/home/takahashi/git_repos/script/
+
+export PATH="$PATH:$MY_CSR/WAM:$MY_CSR/psp"
 
 #####setting
 onedrive=/mnt/c/Users/k-takahashi/OneDrive
