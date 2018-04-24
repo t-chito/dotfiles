@@ -1,28 +1,45 @@
-##login command
-#xmodmap $HOME/.Xmodmap
-#rsync -aur ~/suzaku/ takahashi@v192.168.1.76:/home/takahashi/suzaku/
-#
-#
-#
-#sudo mount -t cifs //192.168.1.153/crystal2 -o username=admin,password=duel0112,rw,nounix,iocharset=utf8,file_mode=0644,dir_mode=0755 /home/takahashi/mountdir
-#mount
-#sudo umount /home/takahashi/mountdir
-#mount
-#useradd -u 522 -g users wiki
-#useradd -c "keisuke numata" -u 588 -g users numata
-#
-#
-zstyle ':completion:*' list-colors 'di=36' 'ln=35'
-zstyle ':completion:*:default' menu select=1
-onedrive=/mnt/c/Users/k-takahashi/OneDrive
-#####ssh rename
-alias via="ssh takahashi@192.168.1.60"
-alias schian="ssh takahashi@192.168.1.56"
-alias gplant="ssh takahashi@192.168.1.59"
-alias midgard="ssh takahashi@192.168.1.57"
-alias flabat="ssh takahashi@192.168.1.24"
+### --- path rename --- ###
 
-###alias command
+# added by Anaconda3 5.0.0 installer
+export PATH="/home/takahashi/software/anaconda3/bin:$PATH"
+
+# added by Anaconda2 4.3.0 installer
+#export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
+
+
+#heasoft
+export HEADAS=/usr/local/software/heasoft/heasoft-6.22.1-patch/x86_64-unknown-linux-gnu-libc2.25
+export FVTMP=/tmp
+export PFILES=$HOME/.pfiles:$PFILES
+export CALDB=/usr/local/software/caldb/
+export CALDBCONFIG=$CALDB/software/tools/caldb.config
+export CALDBALIAS=$CALDB/software/tools/alias_config.fits
+
+#git and so on
+export MY_SCR=~/git_repos/script_research/
+export MY_SETT=~/git_repos/
+
+
+
+export PATH="$PATH:$MY_SCR/sxs-psp/:$MY_SCR/wam:$MY_SCR/rhessi"
+
+
+### --- alias command --- ###
+alias heainit=". $HEADAS/headas-init.sh"
+
+#log command
+alias sologs="vim ~/git_repos/logs_research/solarflare.log"
+alias psplogs="vim ~/git_repos/logs_research/psp.log"
+
+alias thesis="vim ~/git_repos/tex_t"
+
+#cd command
+alias soscr="cd ~/$MY_SCR/solarflare/"
+alias pspscr="cd ~/$MY_SCR/sxs-psp/"
+
+
+
+
 alias py27="source activate py27"
 alias kill-py27="source deactivate"
 alias goo="google-chrome &"
@@ -38,12 +55,20 @@ alias vimv="vim ~/.vimrc"
 alias vimgv="vim ~/.gvimrc"
 alias vimc="vim ~/.cshrc"
 
-#####setting
+
+alias xwin='export DISPLAY=kyte-PC:0.0'
+
+
+###setting
 if [ `hostname` = "kyte-PC" ]; then
 	export DISPLAY=kyte-PC:0.0
 fi
 
 autoload -Uz compinit; compinit
+
+
+zstyle ':completion:*' list-colors 'di=36' 'ln=35'
+zstyle ':completion:*:default' menu select=1
 
 setopt auto_pushd
 setopt correct
@@ -87,17 +112,19 @@ SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
 export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
 
 export HEADAS=/usr/local/software/heasoft/heasoft-6.22.1-patch/x86_64-unknown-linux-gnu-libc2.25
+
+export FVTMP=/tmp
+export PFILES=$HOME/.pfiles:$PFILES
+
 export CALDB=/usr/local/software/caldb/
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 
+alias heainit=". $HEADAS/headas-init.sh"
+
 export MY_SCR=/home/takahashi/git_repos/script/
 
-export PATH="$PATH:$MY_CSR/WAM:$MY_CSR/psp"
-
-#####setting
-onedrive=/mnt/c/Users/k-takahashi/OneDrive
-alias xwin='export DISPLAY=kyte-PC:0.0'
+export PATH="$PATH:/home/takahashi/git_repos/script/WAM:/home/takahashi/git_repos/script/psp"
 
 
 #bindkey -v
@@ -115,9 +142,3 @@ export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd
 
 # 補完候補もLS_COLORSに合わせて色が付くようにする
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-
-# added by Anaconda3 5.0.0 installer
-export PATH="/home/takahashi/software/anaconda3/bin:$PATH"
-
-# added by Anaconda2 4.3.0 installer
-#export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
