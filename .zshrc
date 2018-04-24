@@ -17,7 +17,7 @@ export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 
 #git and so on
 export MY_SCR=~/git_repos/script_research/
-export MY_SETT=~/git_repos/
+export MY_SETT=~/git_repos/dotfiles
 
 
 
