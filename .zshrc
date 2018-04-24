@@ -16,26 +16,25 @@ export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 
 #git and so on
-export MY_SCR=~/git_repos/script_research/
+export SO_SCR=~/git_repos/solar_script/
 export MY_SETT=~/git_repos/dotfiles
 
 
 
-export PATH="$PATH:$MY_SCR/sxs-psp/:$MY_SCR/wam:$MY_SCR/rhessi"
+export PATH="$PATH:~/git_repos/psp_script/:$SO_SCR/wam:$SO_SCR/rhessi"
 
 
 ### --- alias command --- ###
 alias heainit=". $HEADAS/headas-init.sh"
 
 #log command
-alias sologs="vim ~/git_repos/logs_research/solarflare.log"
-alias psplogs="vim ~/git_repos/logs_research/psp.log"
-
-alias thesis="vim ~/git_repos/tex_t"
+alias solarlogs="vim ~/git_repos/solar_logs/solarflare.log"
+alias psplogs="vim ~/git_repos/psp_logs/psp.log"
 
 #cd command
-alias soscr="cd ~/$MY_SCR/solarflare/"
-alias pspscr="cd ~/$MY_SCR/sxs-psp/"
+alias thesis="cd ~/git_repos/tex_t/thesis"
+alias solarscr="cd $SO_SCR"
+alias pspscr="cd ~/git_repos/psp_script/"
 
 
 
