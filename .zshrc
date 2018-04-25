@@ -16,13 +16,13 @@ export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 
 #git and so on
-export SO_SCR=~/git_repos/solar_script/
+export SO_SCR=~/git_repos/solar_script
 export MY_SETT=~/git_repos/dotfiles
 
 
 
-export PATH="$PATH:~/git_repos/psp_script/:$SO_SCR/wam:$SO_SCR/rhessi"
-
+export PATH="~/git_repos/psp_script:$SO_SCR/wam:$SO_SCR/rhessi:$PATH"
+export PATH="~/git_repos/mybin:$PATH"
 
 ### --- alias command --- ###
 alias heainit=". $HEADAS/headas-init.sh"
@@ -35,8 +35,6 @@ alias psplogs="vim ~/git_repos/psp_logs/psp.log"
 alias thesis="cd ~/git_repos/tex_t/thesis"
 alias solarscr="cd $SO_SCR"
 alias pspscr="cd ~/git_repos/psp_script/"
-
-
 
 
 alias py27="source activate py27"
