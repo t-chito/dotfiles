@@ -18,11 +18,11 @@ export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 #git and so on
 export SO_SCR=~/git_repos/solar_script
 export MY_SETT=~/git_repos/dotfiles
+export GIT_REPOS=~/git_repos/
 
 
-
-export PATH="~/git_repos/psp_script:$SO_SCR/wam:$SO_SCR/rhessi:$PATH"
-export PATH="~/git_repos/mybin:$PATH"
+export PATH="$GIT_REPOS/psp_script:$SO_SCR/wam:$SO_SCR/rhessi:$PATH"
+export PATH="$GIT_REPOS/mybin:$PATH"
 
 ### --- alias command --- ###
 alias heainit=". $HEADAS/headas-init.sh"
@@ -52,11 +52,13 @@ alias vimv="vim ~/.vimrc"
 alias vimgv="vim ~/.gvimrc"
 alias vimc="vim ~/.cshrc"
 
-
 alias xwin='export DISPLAY=kyte-PC:0.0'
 
+### --- default command --- ###
 
-###setting
+git_check
+
+### --- setting --- ###
 if [ `hostname` = "kyte-PC" ]; then
 	export DISPLAY=kyte-PC:0.0
 fi
