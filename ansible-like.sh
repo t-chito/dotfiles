@@ -21,3 +21,4 @@ git clone https://t_chito@bitbucket.org/t_chito/personal_study.git
 ln -s $MYSETT/.vim/.vimrc ~/
 ln -s $MYSETT/.inputrc ~/
 ln -s $MYSETT/.zshrc ~/
+ln -s $MYSETT/.idl_startup ~/

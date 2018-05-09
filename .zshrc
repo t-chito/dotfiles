@@ -15,11 +15,14 @@ export CALDB=/usr/local/software/caldb/
 export CALDBCONFIG=$CALDB/software/tools/caldb.config
 export CALDBALIAS=$CALDB/software/tools/alias_config.fits
 
+
 #git and so on
 export SO_SCR=~/git_repos/solar_script
 export MY_SETT=~/git_repos/dotfiles
 export GIT_REPOS=~/git_repos/
 
+#IDL
+export IDL_STARTUP=$HOME/.idl_startup
 
 export PATH="$GIT_REPOS/psp_script:$SO_SCR/wam:$SO_SCR/rhessi:$PATH"
 export PATH="$GIT_REPOS/mybin:$PATH"
