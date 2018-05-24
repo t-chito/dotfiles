@@ -27,6 +27,8 @@ export IDL_STARTUP=$HOME/.idl_startup
 export PATH="$GIT_REPOS/psp_script:$SO_SCR/wam:$SO_SCR/rhessi:$PATH"
 export PATH="$GIT_REPOS/mybin:$PATH"
 
+export HSI_DATA_USER=$HOME/work/rhessi/
+
 ### --- alias command --- ###
 alias heainit=". $HEADAS/headas-init.sh"
 
