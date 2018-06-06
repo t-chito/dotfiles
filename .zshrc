@@ -24,7 +24,7 @@ export GIT_REPOS=~/git_repos/
 #IDL
 export IDL_STARTUP=$HOME/.idl_startup
 
-export PATH="$GIT_REPOS/psp_script:$SO_SCR/wam:$SO_SCR/rhessi:$PATH"
+export PATH="$GIT_REPOS/psp_script:$SO_SCR/wam:$SO_SCR/rhessi:$SO_SCR/flarelist:$PATH"
 export PATH="$GIT_REPOS/mybin:$PATH"
 
 export HSI_DATA_USER=$HOME/work/rhessi/
@@ -47,6 +47,7 @@ alias kill-py27="source deactivate"
 alias goo="google-chrome &"
 alias la="ls -aXF --color=auto"
 alias ls="ls -XF --color=auto"
+alias jn="jupyter-notebook"
 #Xは順番を拡張子ごとにする
 alias lr="ls -RXF --color=auto"
 alias his="history -i 1"
