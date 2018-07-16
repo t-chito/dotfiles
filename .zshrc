@@ -1,11 +1,12 @@
 ### --- path rename --- ###
 
 # added by Anaconda3 5.0.0 installer
-export PATH="/home/takahashi/software/anaconda3/bin:$PATH"
+export PATH="/home/takahashi/.software/anaconda3/bin:$PATH"
 
 # added by Anaconda2 4.3.0 installer
 #export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
 
+google-drive-ocamlfuse ~/.GoogleDrive
 
 #heasoft
 export HEADAS=/usr/local/software/heasoft/heasoft-6.22.1-patch/x86_64-unknown-linux-gnu-libc2.25
@@ -41,9 +42,11 @@ alias thesis="cd ~/git_repos/tex_t/thesis"
 alias solarscr="cd $SO_SCR"
 alias pspscr="cd ~/git_repos/psp_script/"
 
-
+#flabat
 alias py27="source activate py27"
-alias kill-py27="source deactivate"
+#prometheus
+alias mlpy="source activate mlpy"
+alias kill-py="source deactivate"
 alias goo="google-chrome &"
 alias la="ls -aXF --color=auto"
 alias ls="ls -XF --color=auto"
