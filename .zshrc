@@ -6,8 +6,9 @@ export PATH="/home/takahashi/.software/anaconda3/bin:$PATH"
 # added by Anaconda2 4.3.0 installer
 #export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
 
-google-drive-ocamlfuse ~/.GoogleDrive
-
+alias gdrive="google-drive-ocamlfuse ~/.GoogleDrive"
+alias ungdrive="fusermount -u ~/.GoogleDrive"
+alias ungdrive2="sudo umount -l  ~/.GoogleDrive"
 #heasoft
 export HEADAS=/usr/local/software/heasoft/heasoft-6.22.1-patch/x86_64-unknown-linux-gnu-libc2.25
 export FVTMP=/tmp

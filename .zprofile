@@ -1,1 +1,1 @@
-google-drive-ocamlfuse ~/.GoogleDrive
+#google-drive-ocamlfuse ~/.GoogleDrive
