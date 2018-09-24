@@ -1,0 +1,23 @@
+# 基本は github.com のレポジトリーを指定するだけ
+
+#vimfilerを使うために必要
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+
+#ディレクトリ表示
+[[plugins]]
+repo = 'Shougo/vimfiler'
+
+#" を打つと ""に自動補完してくれる
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+#インデントを可視化する
+[[plugins]]
+#repo = 'Yggdroot/indentLine'
+repo = 'nathanaelkane/vim-indent-guides'
+
+#細かい整形が出来るようなる
+[[plugins]]
+repo = 'junegunn/vim-easy-align'

@@ -48,13 +48,22 @@ nnoremap k gk
 " Tab系
 
 " 不可視文字を可視化(タブが「▸-」と表示される)
-set list listchars=tab:\▸\-
+"set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
 set expandtab
 " 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
+"set tabstop=4
 " 行頭でのTab文字の表示幅
+"set shiftwidth=4
+
+" タブを表示するときの幅
+set tabstop=2
+" タブを挿入するときの幅
 set shiftwidth=2
+" タブをタブとして扱う(スペースに展開しない)
+"set noexpandtab
+" 
+"set softtabstop=0
 
 
 " 検索系
@@ -94,5 +103,77 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 "call dein#add('thinca/vim-quickrun')
 "call dein#end()
 
+
+syntax on
+
+
+
+"### dein.vim 導入
+
+  " プラグインが実際にインストールされるディレクトリ
+  let s:dein_dir = expand('~/git_repos/dotfiles/.vim/dein')
+  " dein.vim 本体
+  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+
+  " dein.vim がなければ github から落としてくる
+if &runtimepath !~# '/dein.vim'
+	if !isdirectory(s:dein_repo_dir)
+		execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+	endif
+    execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
+  endif
+
+  " 設定開始
+	if dein#load_state(s:dein_dir)
+		call dein#begin(s:dein_dir)
+ 
+    " プラグインリストを収めた TOML ファイル
+    " 予め TOML ファイル（後述）を用意しておく
+    let g:rc_dir    = expand('~/git_repos/dotfiles/.vim/rc')
+    let s:toml      = g:rc_dir . '/dein.toml'
+    let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
+
+    " TOML を読み込み、キャッシュしておく
+    call dein#load_toml(s:toml,      {'lazy': 0})
+    call dein#load_toml(s:lazy_toml, {'lazy': 1})
+
+    " 設定終了
+    call dein#end()
+    call dein#save_state()
+  endif
+
+  " もし、未インストールものものがあったらインストール
+	if dein#check_install()
+       call dein#install()
+	endif
+
+""" dein.vim ここまで
+
+"""
+"indentguideのほう
+let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_auto_colors = 0
+"colorscheme ir_black
+"hi IndentGuidesOdd  ctermbg=black
+"hi IndentGuidesEven ctermbg=lightgrey
+let g:indent_guides_guide_size = 1
+"set background=dark
+
+"indentLineのほう
+"let g:indentLine_color_term = 111
+"let g:indentLine_color_gui = '#708090'
+""let g:indentLine_char = '' "use ¦, ┆ or │
+"let g:indentLine_char = '¦'
+
+"set list listchars=tab:\¦\ 
+""set list
+""set listchars=tab:»-,trail:-,extends:»,precedes:«,nbsp:%
+"hi SpecialKey ctermfg=235 guifg=#3a3a3a
+
+" easy-align
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 syntax on
