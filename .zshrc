@@ -1,7 +1,7 @@
 ### --- path rename --- ###
 
 # added by Anaconda3 5.0.0 installer
-export PATH="/home/takahashi/.software/anaconda3/bin:$PATH"
+export PATH="/home/takahashi/software/anaconda3/bin:$PATH"
 
 # added by Anaconda2 4.3.0 installer
 #export PATH="/home/takahashi/software/anaconda2/bin:$PATH"
