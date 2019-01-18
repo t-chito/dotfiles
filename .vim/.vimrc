@@ -18,7 +18,8 @@ set hidden
 set showcmd
 "音を消す
 set noerrorbells
-
+"ヤンクがクリップボードに保持される
+set clipboard+=unnamed
 
 " 見た目系
 
