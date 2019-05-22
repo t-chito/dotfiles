@@ -1,0 +1,15 @@
+### historyとかの設定
+
+# file location and name
+    HISTFILE=~/.zsh_history
+# history save size
+    SAVEHIST=10000
+    HISTSIZE=10000
+# ignore duplicated commands
+    setopt hist_ignore_dups
+# 複数のzshを同時に使用した際に履歴ファイルを上書きせず追加する
+    setopt append_history
+# 端末間でのHIST共有
+    setopt share_history
+# 履歴ファイルにzsh の開始・終了時刻を記録する
+    setopt extended_history

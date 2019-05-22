@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  roles:
+   - setting
+
+- hosts: all
+  roles:   
+   - python
+
+- hosts: all
+  roles:
+   - aws
+   - gcp
