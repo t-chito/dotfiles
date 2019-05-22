@@ -1,0 +1,17 @@
+#root user
+if [ ${UID} -eq 0 ]; then
+    tmp_prompt="%B%U${tmp_prompt}%u%b"
+    tmp_prompt2="%B%U${tmp_prompt2}%u%b"
+    tmp_rprompt="%B%U${tmp_rprompt}%u%b"
+    tmp_sprompt="%B%U${tmp_sprompt}%u%b"
+    [ -n "${REMOTEHOST}${SSH_CONNECTION}" ] &&
+        PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+fi
+
+
+PROMPT=$tmp_prompt    # 通常のプロンプト
+PROMPT2=$tmp_prompt2  # セカンダリのプロンプト(コマンドが2行以上の時に表示される)
+RPROMPT=$tmp_rprompt  # 右側のプロンプト
+SPROMPT=$tmp_sprompt  # スペル訂正用プロンプト
+export PROMPT="%{$fg_bold[blue]%}${HOST} $PROMPT"
+

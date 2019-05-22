@@ -1,0 +1,15 @@
+### alias on zsh
+
+alias mlpy="source activate mlpy"
+# ls settings
+#Xは順番を拡張子ごとにする
+
+
+alias ls="ls -vXF --color=auto"
+alias la="ls -avXF --color=auto"
+alias vim="vim "
+alias vimz="vim ~/.zshrc"
+alias vimv="vim ~/.vimrc"
+
+
+

@@ -1,0 +1,14 @@
+function loadlib() {
+        lib=${1:?"You have to specify a library file"}
+        if [ -f "$lib" ];then #ファイルの存在を確認
+                . "$lib"
+        fi
+}
+
+ZDIR="${HOME}/Dropbox/dotfiles/zsh_conf"
+
+loadlib $ZDIR/zshfunc        #関数
+loadlib $ZDIR/zshautoload    #autoload
+loadlib $ZDIR/zshopts        #optset
+loadlib $ZDIR/zshalias       #alias
+loadlib $ZDIR/zshvars        #変数
