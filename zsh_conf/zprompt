@@ -1,3 +1,12 @@
+#my prompt
+tmp_prompt="%{${fg[cyan]}%}%n%# %{${reset_color}%}"
+tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
+tmp_rprompt="%{${fg[green]}%}[%~]%{${reset_color}%}"
+tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
+[ -n "${REMOTEHOST}${SSH_CONNECTION}" ] && 
+        PROMPT="%{^[[37m%}${HOST%%.*} ${PROMPT}"
+
+
 #root user
 if [ ${UID} -eq 0 ]; then
     tmp_prompt="%B%U${tmp_prompt}%u%b"
