@@ -21,6 +21,19 @@
 
 - others_conf
 
+## installed software
+tools:
+install-listに記載
+Dropbox
+zsh
+prompt:
+https://github.com/sindresorhus/pure
+syntax-highlight:
+https://github.com/zsh-users/zsh-syntax-highlighting
+
+anaconda?:
+
+vim:
+
 ## 参考
 PROMPTの設定は
-https://github.com/sindresorhus/pure
