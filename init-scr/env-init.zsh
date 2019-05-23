@@ -11,12 +11,11 @@ cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 wget -O - "https://www.dropbox.com/download?dl=packages/dropbox.py"
 
 
-# setting file
-files = ~/Dropbox/dotfiles/###
+ln -snf ~/Dropbox/dotfiles/zsh_conf/inputrc ~/.inputrc
+ln -snf ~/Dropbox/dotfiles/zsh_conf/zshrc ~/.zshrc
+ln -snf ~/Dropbox/dotfiles/vim_conf/vimrc ~/.vimrc
 
-for item in files; do
-	ln -s ${item} ~/
-done
+
 
 # anaconda install
 	# pass

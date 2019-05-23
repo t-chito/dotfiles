@@ -22,4 +22,5 @@
 - others_conf
 
 ## 参考
-zsh
+PROMPTの設定は
+https://github.com/sindresorhus/pure
