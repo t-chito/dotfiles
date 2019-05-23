@@ -1,30 +1,16 @@
-autoload -Uz compinit; compinit
+#function loadlib() {
+#  lib=$1 #:?"You have to specify a library file"}
+  #if [ -f "$lib" ] ;then #ファイルの存在を確認
+#  source "$lib"
+  #fi
+#}
 
+ZDIR="${HOME}/Dropbox/dotfiles/zsh_conf"
 
-zstyle ':completion:*' list-colors 'di=36' 'ln=35'
-zstyle ':completion:*:default' menu select=1
-
-setopt auto_pushd
-setopt correct
-setopt no_beep
-setopt list_packed
-setopt SH_WORD_SPLIT
-#対話シェル中でのコメントの有効化
-setopt interactive_comments
-
-
-export LANG=ja_JP.UTF-8
-export LESS=-q
-#export LANG=ja_JP.eucJP
-
-######promopt appearance#############################################
-autoload -U colors; colors
-
-
-
-
-#ls color
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.deb=01;31:*.rpm=01;31:*.jpg=01;35:*.png=01;35:*.gif=01;35:*.bmp=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.png=01;35:*.mpg=01;35:*.avi=01;35:*.fli=01;35:*.gl=01;35:*.dl=01;35'
-
-# 補完候補もLS_COLORSに合わせて色が付くようにする
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+#source $ZDIR/zshvars        #変数
+#source $ZDIR/zfunc        #関数
+. ${ZDIR}/zhistory    #history
+. ${ZDIR}/zalias       #alias
+. ${ZDIR}/zcolor      # 色
+. ${ZDIR}/zset        #setoptとかzstyleとか
+. ${ZDIR}/zprompt     #prompt 最後に読むのが吉？

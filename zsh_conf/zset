@@ -1,0 +1,32 @@
+# 文字コードはUTF-8
+export LANG=ja_JP.UTF-8
+
+export LESS=-q
+
+# 補完機能の有効化
+autoload -Uz compinit; compinit
+
+#zstyle ':completion:*' list-colors 'di=36' 'ln=35'
+# 矢印で補完候補の移動
+zstyle ':completion:*:default' menu select=1
+
+# pushdコマンド(ディレクトリ移動のStack) を自動で
+setopt auto_pushd
+# auto_pushdで重複するディレクトリは記録しない
+setopt pushd_ignore_dups
+
+# スペルミスの指摘 
+setopt correct
+# ビープ音消す
+setopt no_beep
+# 補完候補表示時にビープ音を鳴らさない
+setopt nolistbeep
+# 候補が多い場合は詰めて表示
+setopt list_packed
+# コマンドラインの引数でも補完を有効にする（--prefix=/userなど）
+setopt magic_equal_subst
+# 変数でもスペースで分割してアレイ化する(bashにそろえて)
+setopt SH_WORD_SPLIT
+#対話シェル中でのコメントの有効化
+# コマンドラインでも#がコメントに
+setopt interactive_comments

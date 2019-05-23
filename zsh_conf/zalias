@@ -7,6 +7,14 @@ alias mlpy="source activate mlpy"
 
 alias ls="ls -vXF --color=auto"
 alias la="ls -avXF --color=auto"
+if [ $HOST = JARVIS.local ]; then
+  alias ls="ls -vFG"
+  alias la="ls -vaFG"
+fi
+alias history="history -i 1"
+alias his="history"
+alias hisg="history | grep"
+alias soz="source ~/.zshrc"
 alias vim="vim "
 alias vimz="vim ~/.zshrc"
 alias vimv="vim ~/.vimrc"
