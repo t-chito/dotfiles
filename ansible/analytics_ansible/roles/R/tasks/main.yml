@@ -1,0 +1,36 @@
+---
+
+- name: Rリポジトリ登録。Ubuntuバージョンはansible_lsb.codename|lowerで取得可能
+  become: yes
+  lineinfile: >
+    dest=/etc/apt/sources.list
+    line="deb http://cran.ism.ac.jp//bin/linux/ubuntu/ {{ ansible_lsb.codename|lower }}"
+
+- name: Rリポジトリ公開鍵登録
+  become: yes
+  shell: apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9
+
+- name: apt update & R関連apt-get
+  apt: name={{ item }} state=latest update_cache=yes
+  become: yes
+  with_items:
+    - r-base
+    - r-base-dev
+    - gdebi-core
+
+- name: R Studioダウンロード（DLバイナリ名はgroup_varsで管理、新しいのが出たら各自変更
+  become: yes
+  get_url: url="{{ r_studio_binary_url }}{{ r_studio_binary_name }}" dest=/tmp
+
+- name: R Studioインストール
+  become: yes
+  shell: gdebi -n /tmp/{{ r_studio_binary_name }} 
+
+- name: R xgboostインストール
+  become: yes
+  shell: |
+    (
+      echo 'install.packages("drat", repos="https://cran.rstudio.com")'
+      echo 'drat:::addRepo("dmlc")'
+      echo 'install.packages("xgboost", repos="http://dmlc.ml/drat/", type = "source")'
+    ) | Rscript -
