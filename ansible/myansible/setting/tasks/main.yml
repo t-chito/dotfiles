@@ -1,0 +1,23 @@
+---
+
+- name: install ; 基本パッケージのインストールと設定．Python，R関連は別role)
+  apt: name={{ item }} state=latest update_cache=yes
+  become: yes
+  with_items:
+     - git
+     - vim
+     - build-essential
+     - mosh ; macでスリープになってもセッションが切れないやつ
+     - tmux
+     - supervisor ; プロセスの死活管理を行うデーモン化ツール．まだ使わないだろう．
+     - htop ; 高機能なtop
+     - zsh
+
+- name: clone repository
+  become: yes
+  become_user: maintainer
+  git:
+    repo: https://github.com/t-chito/dotfiles.git
+    dest: ~/.gitrepos/
+    accept_hostkey: yes
+  when: not check_repos.stat.exists
