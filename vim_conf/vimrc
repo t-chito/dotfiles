@@ -1,0 +1,123 @@
+"set runtimepath+=${HOME}/Dropbox/dotfiles/vim_conf/
+"runtime! *.vim
+
+" カーソルラインをハイライト
+set cursorline
+
+" 文字コード
+" ファイル読み込み時の文字コード
+set encoding=utf-8
+" Vim script内でマルチバイト文字を使う場合の設定 日本語でコメントを書く場合
+scriptencoding utf-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-/
+set fenc=utf-8
+
+" 諸々の設定
+"viとの互換性を無効にする(INSERT中にカーソルキーが有効になる)
+set nocompatible
+"カーソルを行頭，行末で止まらないようにする
+set whichwrap=b,s,h,l,<,>,[,]
+
+"BSで削除できるものを指定する
+" indent  : 行頭の空白
+" eol     : 改行
+" start   : 挿入モード開始位置より手前の文字
+set backspace=indent,eol,start
+"色付け
+colorscheme koehler
+" バックアップファイルを作らない
+set nobackup
+" スワップファイルを作らない
+set noswapfile
+" 編集中のファイルが変更されたら自動で読み直す
+set autoread
+" バッファが編集中でもその他のファイルを開けるように
+set hidden
+" 入力中のコマンドをステータスに表示する
+set showcmd
+"音を消す
+set noerrorbells
+"ヤンクがクリップボードに保持される
+set clipboard+=unnamed
+
+" 見た目系
+
+" 行番号を表示
+set number
+" 行末の1文字先までカーソルを移動できるように
+set virtualedit=onemore
+" 改行時に前の行の構文をチェックし次の行のインデントを増減
+set smartindent
+" ビープ音を可視化して消去
+set visualbell t_vb=
+" 括弧入力時の対応する括弧を表示
+set showmatch
+
+" ステータスラインの設定
+" ファイル名，テキスト全体に対するカーソル位置(%表示)
+ set statusline=%t
+" これ以降は右寄せ表示
+ set statusline+=%=
+" file encoding
+ set statusline+=[ENC=%{&fileencoding}]
+" 現在行数/全行数
+set statusline+=[ROW=%l/%L]
+
+" ステータスラインを常に表示
+set laststatus=2
+
+" コマンドラインの補完
+" set wildmode=list:longest
+" 折り返し時に表示行単位での移動できるようにする
+nnoremap j gj
+nnoremap k gk
+
+" jjでEsc
+inoremap <silent> jj <ESC>
+" っjでEsc
+inoremap <silent> っj <ESC>
+
+
+" Tab系
+
+" Tab文字を半角スペースにする
+set expandtab
+" タブを表示するときの幅
+set tabstop=4
+" タブを挿入するときの幅
+set shiftwidth=4
+" タブをタブとして扱う(スペースに展開しない)
+"set noexpandtab
+" 
+"set softtabstop=0
+
+
+" 検索系
+" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+set ignorecase
+" 検索文字列に大文字が含まれている場合は区別して検索する
+set smartcase
+" 検索文字列入力時に順次対象文字列にヒットさせる
+set incsearch
+" 検索時に最後まで行ったら最初に戻る
+set wrapscan
+" 検索語をハイライト表示
+set hlsearch
+" ESC連打でハイライト解除
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+" クリップボードからペーストする時だけインデントしない
+if &term =~ "xterm"
+      let &t_SI .= "\e[?2004h"
+      let &t_EI .= "\e[?2004l"
+      let &pastetoggle = "\e[201~"
+
+      function XTermPasteBegin(ret)
+          set paste
+          return a:ret
+      endfunction
+
+      inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+endif
+
+syntax on
