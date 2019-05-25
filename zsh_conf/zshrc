@@ -13,4 +13,5 @@ ZDIR="${HOME}/Dropbox/dotfiles/zsh_conf"
 . ${ZDIR}/zalias       #alias
 . ${ZDIR}/zcolor      # 色
 . ${ZDIR}/zset        #setoptとかzstyleとか
+. ${ZDIR}/zplugin     # 各種プラグイン
 . ${ZDIR}/zprompt     #prompt 最後に読むのが吉？

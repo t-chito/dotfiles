@@ -22,14 +22,21 @@
 - others_conf
 
 ## installed software
+
 tools:
 install-listに記載
+
 Dropbox
-zsh
-prompt:
-https://github.com/sindresorhus/pure
-syntax-highlight:
-https://github.com/zsh-users/zsh-syntax-highlighting
+
+### zsh
+
+* prompt==pure: https://github.com/sindresorhus/pure
+* zsh-autosuggestions - 履歴から勝手に補完してくれる
+* zsh-syntax-highlighting - コマンドを色分けしてくれる
+* zsh-completions - 補完を強化
+* zsh-history-substring-search - 途中まで打ちカーソル上下で補完を切り替えれる
+
+参考： https://qiita.com/qwerty/items/92412925ac2cb9eabf4c
 
 anaconda?:
 
