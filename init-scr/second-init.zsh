@@ -13,6 +13,7 @@ fi
 ln -snf ${tmp_path}/zsh_conf/inputrc ~/.inputrc
 ln -snf ${tmp_path}/zsh_conf/zshrc ~/.zshrc
 ln -snf ${tmp_path}/vim_conf/vimrc ~/.vimrc
+ln -snf ${tmp_path}/other_conf/tmux.conf ~/.tmux.conf
 
 cd ${tmp_path}/ansible/analytics_ansible/
 

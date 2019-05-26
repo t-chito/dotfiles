@@ -27,10 +27,11 @@
       echo 'export PATH=$PYENV_ROOT/bin:$PATH'
       echo 'eval "$(pyenv init -)"'
     ) >> ~/.zsh_profile
+    source ~/.zsh_profile
 
 - name: Anacondaインストールとpyenv globalに設定。時間かかります。アップデートは更に時間かかるのでしてません。group_varsのインストールバージョンを変えるか、各自"conda update --all -y"等実行をお願いします。
   shell: |
-    bash -lc " \
+    zsh -lc " \
       pyenv install {{python_version}}; \
       pyenv rehash; \
       pyenv global {{python_version}}; \

@@ -1,3 +1,4 @@
+fpath=( "${HOME}/Dropbox/dotfiles/zsh_conf/zplug.d/pure" $fpath )
 autoload -U promptinit; promptinit
 prompt pure
 PURE_PROMPT_SYMBOL=">>>"

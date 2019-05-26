@@ -3,7 +3,7 @@
 
 " カーソルラインをハイライト
 set cursorline
-
+hi clear CursorLine
 " 文字コード
 " ファイル読み込み時の文字コード
 set encoding=utf-8
